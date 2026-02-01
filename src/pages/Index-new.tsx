@@ -1,6 +1,5 @@
 import mineArmourHero from "@/assets/mine-armour-hero.jpg";
 import { Button } from "@/components/ui/button";
-import { SystemStatusCard } from "@/components/landing/SystemStatusCard";
 import {
   Activity,
   AlertTriangle,
@@ -22,7 +21,6 @@ const navItems = [
   { label: "Solution", href: "#solution" },
   { label: "Components", href: "#components" },
   { label: "Capabilities", href: "#capabilities" },
-  { label: "About", href: "/about" },
   { label: "Pricing", href: "#pricing" },
 ];
 
@@ -384,7 +382,17 @@ const Index = () => {
               </div>
 
               <div className="flex items-center justify-center">
-                <SystemStatusCard />
+                <div className="relative h-96 w-96 rounded-3xl border border-gray-800 bg-gradient-to-b from-gray-900 to-black p-8">
+                  <div className="flex h-full flex-col items-center justify-center">
+                    <div className="mb-6 h-32 w-32 rounded-full bg-gradient-to-br from-red-600 to-red-800 p-2 shadow-[0_0_60px_rgba(220,38,38,0.6)]">
+                      <div className="flex h-full items-center justify-center rounded-full border-4 border-black">
+                        <ShieldCheck className="h-16 w-16 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="mb-2 text-2xl font-bold">SYSTEM ACTIVE</h3>
+                    <p className="text-sm text-red-500">MONITORING: 24/7</p>
+                  </div>
+                </div>
               </div>
             </div>
 
