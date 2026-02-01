@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -10,6 +12,13 @@ All colors MUST be HSL.
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    /* Industrial / safety accent */
+    --brand: 45 100% 50%;
+    --brand-foreground: 222.2 84% 4.9%;
+    --status-safe: 142 72% 34%;
+    --status-warn: 45 100% 50%;
+    --status-emergency: 0 84% 55%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -26,8 +35,8 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--brand);
+    --accent-foreground: var(--brand-foreground);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -37,6 +46,14 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+
+    --gradient-hero: radial-gradient(900px circle at 20% 10%, hsl(var(--accent) / 0.28), transparent 55%),
+      radial-gradient(700px circle at 80% 30%, hsl(var(--foreground) / 0.08), transparent 60%);
+    --shadow-elevated: 0 18px 50px -24px hsl(var(--foreground) / 0.28);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,6 +73,12 @@ All colors MUST be HSL.
   }
 
   .dark {
+    --brand: 45 100% 50%;
+    --brand-foreground: 222.2 84% 4.9%;
+    --status-safe: 142 72% 45%;
+    --status-warn: 45 100% 52%;
+    --status-emergency: 0 84% 60%;
+
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -101,5 +124,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }

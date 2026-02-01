@@ -19,6 +19,15 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+          brand: {
+            DEFAULT: "hsl(var(--brand))",
+            foreground: "hsl(var(--brand-foreground))",
+          },
+          status: {
+            safe: "hsl(var(--status-safe))",
+            warn: "hsl(var(--status-warn))",
+            emergency: "hsl(var(--status-emergency))",
+          },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -58,6 +67,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+        fontFamily: {
+          sans: ["var(--font-sans)"],
+          display: ["var(--font-display)"],
+        },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
