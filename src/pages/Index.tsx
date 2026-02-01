@@ -24,13 +24,10 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { label: "Overview", href: "#overview" },
-  { label: "Problem", href: "#problem" },
-  { label: "Solution", href: "#solution" },
+  { label: "Solutions", href: "#solution" },
   { label: "Components", href: "#components" },
-  { label: "Safety", href: "#safety" },
-  { label: "Architecture", href: "#architecture" },
-  { label: "Use Cases", href: "#use-cases" },
+  { label: "Capabilities", href: "#safety" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 const Index = () => {
@@ -43,15 +40,15 @@ const Index = () => {
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      <header className="sticky top-0 z-40 border-b border-red-500/10 bg-black/70 backdrop-blur">
         <div className="container flex h-16 items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-md bg-accent/15 text-accent-foreground">
+            <div className="grid h-9 w-9 place-items-center rounded-md bg-red-500/15 text-red-500">
               <ShieldCheck className="h-5 w-5" aria-hidden="true" />
             </div>
             <div>
-              <p className="font-display text-base font-semibold tracking-tight">MINE ARMOUR</p>
-              <p className="text-xs text-muted-foreground">Smart Safety & Monitoring</p>
+              <p className="font-display text-base font-semibold tracking-tight text-white">MINE ARMOR</p>
+              <p className="text-xs text-white/60">Smart Safety & Monitoring</p>
             </div>
           </div>
 
@@ -60,7 +57,7 @@ const Index = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 {item.label}
               </a>
@@ -68,14 +65,8 @@ const Index = () => {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button asChild variant="outline" className="hidden sm:inline-flex">
-              <a href="#architecture">See How It Works</a>
-            </Button>
-            <Button
-              asChild
-              className="bg-accent text-accent-foreground hover:bg-accent/90 focus-visible:ring-accent"
-            >
-              <a href="#contact">Request Demo</a>
+            <Button asChild className="rounded-full bg-red-600 px-5 text-white hover:bg-red-500">
+              <a href="#contact">LOGIN</a>
             </Button>
           </div>
         </div>
@@ -91,50 +82,41 @@ const Index = () => {
               className="h-full w-full object-cover"
               loading="eager"
             />
-            <div className="absolute inset-0 bg-foreground/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-red-950/80 to-black" />
             <div className="absolute inset-0" style={{ backgroundImage: "var(--gradient-hero)" }} />
           </div>
 
           <div className="container relative py-16 sm:py-20 lg:py-28">
-            <div className="max-w-2xl">
-              <StatusPill level="safe" className="border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground">
-                Prototype Ready
+            <div className="mx-auto max-w-3xl text-center">
+              <StatusPill level="emergency" className="border-red-500/40 bg-red-500/10 text-red-500">
+                NEXT-GEN MINING SAFETY
               </StatusPill>
-              <h1 className="mt-6 font-display text-4xl font-semibold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
-                MINE ARMOUR
+              <h1 className="mt-6 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                MINE <span className="text-red-500">ARMOR</span>
               </h1>
-              <p className="mt-3 text-lg font-medium text-primary-foreground/90 sm:text-xl">
-                Smart Safety & Monitoring System for Miners
-              </p>
-              <p className="mt-5 text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-                Mine Armour combines environmental sensing, health monitoring, and automated alerting to improve worker
-                safety in harsh mining conditions — built to support faster decisions and better emergency response.
+              <p className="mt-3 text-base font-medium text-white/80 sm:text-lg">
+                Advanced IoT protection system monitoring environmental hazards and miner health in real-time. Zero harm.
+                Maximum efficiency.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 focus-visible:ring-accent">
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button asChild className="rounded-full bg-red-600 px-8 text-white hover:bg-red-500">
                   <a href="#overview">View System Overview</a>
-                </Button>
-                <Button asChild variant="outline" className="border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/15">
-                  <a href="#architecture">See How It Works</a>
-                </Button>
-                <Button asChild variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
-                  <a href="#contact">Request Demo</a>
                 </Button>
               </div>
 
-              <div className="mt-10 grid gap-3 sm:grid-cols-3">
-                <div className="rounded-lg border border-primary-foreground/15 bg-primary-foreground/10 p-4">
-                  <p className="text-sm font-semibold text-primary-foreground">Continuous sensing</p>
-                  <p className="mt-1 text-xs text-primary-foreground/75">Gas, temperature, humidity, vitals</p>
+              <div className="mt-10 grid gap-6 sm:grid-cols-3">
+                <div className="flex flex-col items-center gap-2 text-white/80">
+                  <ShieldCheck className="h-5 w-5 text-red-500" />
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em]">Real-time protection</p>
                 </div>
-                <div className="rounded-lg border border-primary-foreground/15 bg-primary-foreground/10 p-4">
-                  <p className="text-sm font-semibold text-primary-foreground">Clear alerts</p>
-                  <p className="mt-1 text-xs text-primary-foreground/75">Safe / Warning / Emergency logic</p>
+                <div className="flex flex-col items-center gap-2 text-white/80">
+                  <HeartPulse className="h-5 w-5 text-red-500" />
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em]">Health monitoring</p>
                 </div>
-                <div className="rounded-lg border border-primary-foreground/15 bg-primary-foreground/10 p-4">
-                  <p className="text-sm font-semibold text-primary-foreground">Rescue support</p>
-                  <p className="mt-1 text-xs text-primary-foreground/75">GPS location for response teams</p>
+                <div className="flex flex-col items-center gap-2 text-white/80">
+                  <Radio className="h-5 w-5 text-red-500" />
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em]">Smart connectivity</p>
                 </div>
               </div>
             </div>
@@ -198,31 +180,71 @@ const Index = () => {
         {/* SECTION 3: THE MINE ARMOUR SOLUTION */}
         <Section
           id="solution"
-          kicker="The Mine Armour Solution"
-          title="Designed to prevent, detect, and respond"
-          description="Mine Armour combines sensing, analytics, and alerting into one integrated safety workflow."
+          kicker="THE SOLUTION"
+          title={
+            <>
+              Comprehensive <span className="text-red-500">Safety</span>
+              <br />
+              Ecosystem
+            </>
+          }
+          description="Mine Armour isn't just a sensor—it's a complete safety ecosystem designed to protect lives underground. By integrating wearable technology with robust cloud monitoring, we provide a 360-degree view of miner safety."
+          className="bg-black"
         >
-          <div className="grid gap-4 lg:grid-cols-2">
-            <InfoCard
-              icon={ShieldCheck}
-              title="Built for harsh environments"
-              description="Designed for rugged conditions with reliable sensing and clear operational feedback."
-            />
-            <InfoCard
-              icon={LayoutDashboard}
-              title="Centralized monitoring dashboard"
-              description="A web-based dashboard shows safety indicators and alert status for quick situational awareness."
-            />
-            <InfoCard
-              icon={Radio}
-              title="Wireless data transmission"
-              description="Transmit data to a monitoring system without manual checks—supporting continuous oversight."
-            />
-            <InfoCard
-              icon={Cloud}
-              title="Secure backend processing"
-              description="Central processing enables scalable alerts, reporting, and structured safety logs (non-live demo content)."
-            />
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="grid gap-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full border border-red-500/50 p-2 text-red-500">
+                    <ShieldCheck className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-medium text-white">Continuous Environmental Monitoring</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full border border-red-500/50 p-2 text-red-500">
+                    <HeartPulse className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-medium text-white">Real-time Miner Health Tracking</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full border border-red-500/50 p-2 text-red-500">
+                    <AlarmClock className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-medium text-white">Automated Safety Alerts</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full border border-red-500/50 p-2 text-red-500">
+                    <LayoutDashboard className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-medium text-white">Centralized Monitoring Dashboard</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full border border-red-500/50 p-2 text-red-500">
+                    <ShieldCheck className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-medium text-white">Rugged Design for Harsh Conditions</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 rounded-full border border-red-500/50 p-2 text-red-500">
+                    <Radio className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-medium text-white">Low-Latency Data Transmission</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center lg:justify-end">
+              <div className="system-active-card">
+                <div className="system-active-inner">
+                  <div className="system-active-dot" />
+                  <ShieldCheck className="h-10 w-10 text-white" />
+                </div>
+                <div className="mt-6">
+                  <p className="text-lg font-semibold tracking-wide text-white">SYSTEM ACTIVE</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.3em] text-red-400">Monitoring 24/7</p>
+                </div>
+              </div>
+            </div>
           </div>
         </Section>
 
