@@ -77,12 +77,12 @@ const About = () => {
             <div className="engraved-text mb-6 text-sm font-bold uppercase tracking-[0.3em] text-red-500">
               About Mine Armor
             </div>
-            <h1 className="engraved-heading mb-6 text-5xl font-black tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="engraved-heading headline-glow mb-6 text-6xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
               Built for Those Who<br />
-              <span className="text-red-500">Go Underground</span>
+              <span className="text-red-500">Go Mining</span>
             </h1>
             <p className="fade-in-slow mx-auto max-w-2xl text-lg text-gray-400">
-              Every shift underground is a calculated risk. We're building technology to make sure everyone comes back.
+              Every shift in a mine is a calculated risk. We're building technology to make sure everyone comes back.
             </p>
           </div>
         </section>
@@ -271,14 +271,14 @@ const About = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                  <Button size="lg" className="group rounded-full bg-red-600 px-8 hover:bg-red-700" asChild>
+                <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-center">
+                  <Button size="lg" className="group w-full rounded-full bg-red-600 px-8 hover:bg-red-700 sm:w-auto" asChild>
                     <a href="/#solution">
                       Explore Our Solution
                       <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </a>
                   </Button>
-                  <Button size="lg" variant="outline" className="rounded-full border-gray-700 bg-transparent hover:bg-gray-900" asChild>
+                  <Button size="lg" variant="outline" className="w-full rounded-full border-gray-700 bg-transparent hover:bg-gray-900 sm:w-auto" asChild>
                     <a href="/">Back to Home</a>
                   </Button>
                 </div>

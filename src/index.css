@@ -121,6 +121,24 @@ All colors MUST be HSL.
   }
 }
 
+/* Hide pricing/contact until targeted from nav */
+.reveal-on-target {
+  display: none;
+}
+
+.reveal-on-target:target {
+  display: block;
+}
+
+/* Footer contact band only visible when Contact is targeted */
+.contact-band {
+  display: none;
+}
+
+#contact:target ~ footer .contact-band {
+  display: grid;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -335,6 +353,17 @@ html {
   }
 }
 
+@keyframes heroGlow {
+  0%, 100% {
+    text-shadow: 0 0 18px rgba(220, 38, 38, 0.4), 0 0 48px rgba(220, 38, 38, 0.2);
+    filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.55));
+  }
+  50% {
+    text-shadow: 0 0 26px rgba(220, 38, 38, 0.7), 0 0 70px rgba(220, 38, 38, 0.4);
+    filter: drop-shadow(0 16px 50px rgba(0, 0, 0, 0.65));
+  }
+}
+
 @keyframes revealText {
   from {
     opacity: 0;
@@ -397,6 +426,14 @@ html {
   animation: engrave 2s ease-out forwards;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 20px rgba(220, 38, 38, 0.4);
   letter-spacing: -0.02em;
+}
+
+.headline-glow {
+  animation: heroGlow 3.6s ease-in-out infinite;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(220, 38, 38, 0.9), rgba(255, 255, 255, 0.95));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .fade-in-slow {
